@@ -84,13 +84,14 @@
     return nil;
 }
 
+
 - (CGSize)mediaViewDisplaySize
 {
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
         return CGSizeMake(315.0f, 225.0f);
     }
     
-    return CGSizeMake(210.0f, 150.0f);
+    return CGSizeMake([UIScreen mainScreen].bounds.size.width-16, 150.0f);
 }
 
 - (UIView *)mediaPlaceholderView
