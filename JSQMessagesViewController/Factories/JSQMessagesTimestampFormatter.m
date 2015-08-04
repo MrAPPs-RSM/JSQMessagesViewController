@@ -97,11 +97,11 @@
     
     NSMutableAttributedString *timestamp = [[NSMutableAttributedString alloc] initWithString:relativeDate
                                                                                   attributes:self.dateTextAttributes];
-    
+    /*
     [timestamp appendAttributedString:[[NSAttributedString alloc] initWithString:@" "]];
     
     [timestamp appendAttributedString:[[NSAttributedString alloc] initWithString:time
-                                                                      attributes:self.timeTextAttributes]];
+                                                                      attributes:self.timeTextAttributes]];*/
     
     return [[NSAttributedString alloc] initWithAttributedString:timestamp];
 }
@@ -114,7 +114,8 @@
     
     [self.dateFormatter setDateStyle:NSDateFormatterNoStyle];
     [self.dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-    return [self.dateFormatter stringFromDate:date];
+    NSString *shortDate = [self.dateFormatter stringFromDate:date];
+    return shortDate;
 }
 
 - (NSString *)relativeDateForDate:(NSDate *)date

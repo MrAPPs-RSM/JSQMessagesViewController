@@ -91,7 +91,7 @@
         return CGSizeMake(315.0f, 225.0f);
     }
     
-    return CGSizeMake([UIScreen mainScreen].bounds.size.width-16, 150.0f);
+    return CGSizeMake([UIScreen mainScreen].bounds.size.width-16, 200.0f);
 }
 
 - (UIView *)mediaPlaceholderView

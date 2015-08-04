@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
@@ -22,7 +21,7 @@
                             <constraint firstAttribute="width" constant="320" id="9pD-3x-uQh"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2zh-vR-QJW" userLabel="Bubble container">
@@ -39,22 +38,22 @@
                                     <constraint firstAttribute="width" constant="284" id="MU7-Ac-gHg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cell bottom label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Uc-dI-YDD" userLabel="Cell bottom label" customClass="JSQMessagesLabel">
-                                <rect key="frame" x="0.0" y="114" width="276" height="20"/>
+                                <rect key="frame" x="0.0" y="114" width="270" height="20"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="cPs-M4-tjX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLY-aM-0Dr" customClass="JSQMessagesCellTextView">
                                 <rect key="frame" x="0.0" y="20" width="284" height="94"/>
-                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="284" id="qFV-CX-2ZN"/>
                                 </constraints>
@@ -70,7 +69,7 @@
                             <constraint firstItem="2qm-c6-OZf" firstAttribute="top" secondItem="2zh-vR-QJW" secondAttribute="top" id="DbW-Cx-zOW"/>
                             <constraint firstItem="2qm-c6-OZf" firstAttribute="leading" secondItem="2zh-vR-QJW" secondAttribute="leading" id="H1H-yn-Raq"/>
                             <constraint firstItem="7Uc-dI-YDD" firstAttribute="top" secondItem="vLY-aM-0Dr" secondAttribute="bottom" id="KKe-yj-OFA"/>
-                            <constraint firstAttribute="trailing" secondItem="7Uc-dI-YDD" secondAttribute="trailing" constant="8" id="S3f-DC-DRE"/>
+                            <constraint firstAttribute="trailing" secondItem="7Uc-dI-YDD" secondAttribute="trailing" constant="14" id="S3f-DC-DRE"/>
                             <constraint firstItem="p52-YN-yLu" firstAttribute="leading" secondItem="2zh-vR-QJW" secondAttribute="leading" id="UYw-Yb-p8d"/>
                             <constraint firstItem="vLY-aM-0Dr" firstAttribute="top" secondItem="p52-YN-yLu" secondAttribute="bottom" id="aDu-vy-4qr"/>
                             <constraint firstItem="7Uc-dI-YDD" firstAttribute="leading" secondItem="2zh-vR-QJW" secondAttribute="leading" id="af7-qS-wfZ"/>
@@ -123,7 +122,7 @@
                 <outlet property="cellTopLabel" destination="jxM-YD-sVG" id="acH-pr-spx"/>
                 <outlet property="cellTopLabelHeightConstraint" destination="9oK-E7-iXA" id="MZM-kV-2dI"/>
                 <outlet property="messageBubbleContainerView" destination="2zh-vR-QJW" id="pu0-GU-eZl"/>
-                <outlet property="messageBubbleContainerWidthConstraint" destination="wUE-Yr-ZfD" id="cWz-9E-O4Z"/>
+                <outlet property="messageBubbleContainerWidthConstraint" destination="wUE-Yr-ZfD" id="GiX-e4-ixi"/>
                 <outlet property="messageBubbleImageView" destination="2qm-c6-OZf" id="bpy-Gv-jSh"/>
                 <outlet property="messageBubbleTopLabel" destination="p52-YN-yLu" id="SLH-sA-Chu"/>
                 <outlet property="messageBubbleTopLabelHeightConstraint" destination="8TB-va-f8L" id="FNt-BS-Wxi"/>
@@ -133,7 +132,7 @@
                 <outlet property="textViewMarginHorizontalSpaceConstraint" destination="y4J-ls-ATQ" id="AJD-Vf-pc8"/>
                 <outlet property="textViewTopVerticalSpaceConstraint" destination="aDu-vy-4qr" id="bX5-Ws-84B"/>
             </connections>
-            <point key="canvasLocation" x="284" y="267"/>
+            <point key="canvasLocation" x="204" y="308"/>
         </collectionViewCell>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
