@@ -317,6 +317,9 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
     [self.messageBubbleContainerView addSubview:mediaView];
     [self.messageBubbleContainerView jsq_pinAllEdgesOfSubview:mediaView];
+    
+    //self.cellBottomLabel.frame = (CGRect){self.cellBottomLabel.frame.origin.x, self.cellBottomLabel.frame.origin.y-40, self.cellBottomLabel.frame.size};
+    
     _mediaView = mediaView;
 
     //  because of cell re-use (and caching media views, if using built-in library media item)
