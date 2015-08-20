@@ -141,6 +141,7 @@
  *  Returns the avatar image view of the cell that is responsible for displaying avatar images.
  */
 @property (weak, nonatomic, readonly) UIImageView *avatarImageView;
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *sentImageView;
 
 /**
  *  Returns the avatar container view of the cell. This view is the superview of the cell's avatarImageView.
