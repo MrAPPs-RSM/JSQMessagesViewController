@@ -82,7 +82,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="cell bottom label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Uc-dI-YDD" userLabel="Cell bottom label" customClass="JSQMessagesLabel">
-                        <rect key="frame" x="0.0" y="134" width="256" height="20"/>
+                        <rect key="frame" x="0.0" y="134" width="254" height="20"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="cPs-M4-tjX"/>
@@ -92,7 +92,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icona_spunta.png" translatesAutoresizingMaskIntoConstraints="NO" id="IGP-Jg-EkF">
-                        <rect key="frame" x="264" y="134" width="20" height="20"/>
+                        <rect key="frame" x="254" y="134" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="3I8-d7-RYd"/>
                             <constraint firstAttribute="height" constant="20" id="jCH-eC-gzd"/>
@@ -102,16 +102,15 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
+                <constraint firstItem="IGP-Jg-EkF" firstAttribute="trailing" secondItem="2zh-vR-QJW" secondAttribute="trailing" constant="-10" id="3eJ-dI-oRq"/>
                 <constraint firstItem="IGP-Jg-EkF" firstAttribute="top" secondItem="2zh-vR-QJW" secondAttribute="bottom" id="4nA-Qm-pNd"/>
                 <constraint firstItem="p52-YN-yLu" firstAttribute="top" secondItem="jxM-YD-sVG" secondAttribute="bottom" id="98K-Do-9fQ"/>
                 <constraint firstAttribute="trailing" secondItem="jxM-YD-sVG" secondAttribute="trailing" id="AwY-g7-f1T"/>
-                <constraint firstItem="2zh-vR-QJW" firstAttribute="trailing" secondItem="IGP-Jg-EkF" secondAttribute="trailing" id="BRy-Tk-1o4"/>
                 <constraint firstAttribute="bottom" secondItem="2zh-vR-QJW" secondAttribute="bottom" constant="20" id="EEY-BQ-88U"/>
                 <constraint firstItem="jxM-YD-sVG" firstAttribute="top" secondItem="23f-xH-rkY" secondAttribute="top" id="HYT-Tw-whz"/>
                 <constraint firstAttribute="trailing" secondItem="X89-B1-aAd" secondAttribute="trailing" id="KLt-Ix-wDa"/>
-                <constraint firstItem="IGP-Jg-EkF" firstAttribute="leading" secondItem="7Uc-dI-YDD" secondAttribute="trailing" constant="8" id="MZa-69-JjB"/>
+                <constraint firstItem="IGP-Jg-EkF" firstAttribute="leading" secondItem="7Uc-dI-YDD" secondAttribute="trailing" id="MZa-69-JjB"/>
                 <constraint firstItem="X89-B1-aAd" firstAttribute="leading" secondItem="2zh-vR-QJW" secondAttribute="trailing" constant="2" id="Une-yZ-FwB"/>
-                <constraint firstItem="X89-B1-aAd" firstAttribute="top" secondItem="jxM-YD-sVG" secondAttribute="bottom" constant="80" id="V0T-0e-BOK"/>
                 <constraint firstItem="7Uc-dI-YDD" firstAttribute="top" secondItem="2zh-vR-QJW" secondAttribute="bottom" id="boN-uu-y51"/>
                 <constraint firstAttribute="bottom" secondItem="IGP-Jg-EkF" secondAttribute="bottom" id="nV9-7w-bJ6"/>
                 <constraint firstAttribute="bottom" secondItem="7Uc-dI-YDD" secondAttribute="bottom" id="oXV-La-hoH"/>
@@ -140,7 +139,7 @@
                 <outlet property="textViewAvatarHorizontalSpaceConstraint" destination="Une-yZ-FwB" id="YAc-9n-1vJ"/>
                 <outlet property="textViewMarginHorizontalSpaceConstraint" destination="y4J-ls-ATQ" id="AJD-Vf-pc8"/>
             </connections>
-            <point key="canvasLocation" x="212" y="355"/>
+            <point key="canvasLocation" x="-86" y="190"/>
         </collectionViewCell>
     </objects>
     <resources>
