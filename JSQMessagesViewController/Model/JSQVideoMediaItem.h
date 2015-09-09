@@ -37,7 +37,6 @@
  *  @discussion When set to `YES`, the video is ready. When set to `NO` it is not ready.
  */
 @property (nonatomic, assign) BOOL isReadyToPlay;
-
 /**
  *  Initializes and returns a video media item having the given fileURL.
  *

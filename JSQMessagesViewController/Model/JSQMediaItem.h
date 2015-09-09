@@ -39,7 +39,7 @@
  *  The default value is `YES`.
  */
 @property (assign, nonatomic) BOOL appliesMediaViewMaskAsOutgoing;
-
+@property (nonatomic, assign) BOOL isAudio;
 /**
  *  Initializes and returns a media item with the specified value for maskAsOutgoing.
  *

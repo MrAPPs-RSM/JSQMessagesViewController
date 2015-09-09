@@ -24,6 +24,7 @@
 
 #import "UIView+JSQMessages.h"
 #import "UIDevice+JSQMessages.h"
+#import "JSQVideoMediaItem.h"
 
 
 static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;

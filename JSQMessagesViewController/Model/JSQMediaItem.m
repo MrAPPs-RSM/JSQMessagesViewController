@@ -43,6 +43,7 @@
     self = [super init];
     if (self) {
         _appliesMediaViewMaskAsOutgoing = maskAsOutgoing;
+        _isAudio = NO;
         _cachedPlaceholderView = nil;
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(didReceiveMemoryWarningNotification:)
@@ -69,6 +70,11 @@
     _cachedPlaceholderView = nil;
 }
 
+- (void)setIsAudio:(BOOL)isAudio {
+    
+    _isAudio = isAudio;
+}
+
 #pragma mark - Notifications
 
 - (void)didReceiveMemoryWarningNotification:(NSNotification *)notification
@@ -91,7 +97,10 @@
         return CGSizeMake(315.0f, 225.0f);
     }
     
-    return CGSizeMake([UIScreen mainScreen].bounds.size.width-16, 200.0f);
+    if(!_isAudio)
+        return CGSizeMake([UIScreen mainScreen].bounds.size.width-16, 200.0f);
+    
+    return CGSizeMake([UIScreen mainScreen].bounds.size.width-16, 65.0f);
 }
 
 - (UIView *)mediaPlaceholderView

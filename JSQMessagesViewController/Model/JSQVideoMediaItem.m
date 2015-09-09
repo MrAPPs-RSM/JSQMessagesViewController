@@ -22,7 +22,7 @@
 #import "JSQMessagesMediaViewBubbleImageMasker.h"
 
 #import "UIImage+JSQMessages.h"
-
+#import <AVFoundation/AVFoundation.h>
 
 @interface JSQVideoMediaItem ()
 
@@ -87,14 +87,42 @@
     }
     
     if (self.cachedVideoImageView == nil) {
-        CGSize size = [self mediaViewDisplaySize];
-        UIImage *playIcon = [[UIImage jsq_defaultPlayImage] jsq_imageMaskedWithColor:[UIColor lightGrayColor]];
         
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:playIcon];
+        CGSize size = [self mediaViewDisplaySize];
+        
+        self.fileURL = [NSURL URLWithString:[NSString stringWithFormat:@"file://%@", [self.fileURL absoluteString]]];
+        NSLog(@"VIDEO URL: %@", self.fileURL);
+        
+        UIImageView *imageView = [[UIImageView alloc] init];
         imageView.backgroundColor = [UIColor blackColor];
         imageView.frame = CGRectMake(0.0f, 0.0f, size.width, size.height);
-        imageView.contentMode = UIViewContentModeCenter;
+        if(!self.isAudio){
+            
+            //Thumbnail di anteprima del primo secondo di video
+            AVURLAsset *asset1 = [[AVURLAsset alloc] initWithURL: self.fileURL options:nil];
+            AVAssetImageGenerator *generate1 = [[AVAssetImageGenerator alloc] initWithAsset:asset1];
+            generate1.appliesPreferredTrackTransform = YES;
+            NSError *err = NULL;
+            CMTime time = CMTimeMake(1, 2);
+            CGImageRef oneRef = [generate1 copyCGImageAtTime:time actualTime:NULL error:&err];
+            UIImage *one = [[UIImage alloc] initWithCGImage:oneRef];
+            imageView.image = one;
+        }
+            
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.clipsToBounds = YES;
+        
+        //Icona centrale di play
+        UIImage *playIcon = [[UIImage jsq_defaultPlayImage] jsq_imageMaskedWithColor:[UIColor lightGrayColor]];
+        UIImageView *centerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, imageView.frame.size.width, imageView.frame.size.height)];
+        centerImageView.image = playIcon;
+        centerImageView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+        centerImageView.contentMode = UIViewContentModeCenter;
+        centerImageView.center = CGPointMake(imageView.frame.size.width/2, imageView.frame.size.height/2);
+        centerImageView.clipsToBounds = YES;
+        
+        [imageView addSubview:centerImageView];
+        
         [JSQMessagesMediaViewBubbleImageMasker applyBubbleImageMaskToMediaView:imageView isOutgoing:self.appliesMediaViewMaskAsOutgoing];
         self.cachedVideoImageView = imageView;
     }
