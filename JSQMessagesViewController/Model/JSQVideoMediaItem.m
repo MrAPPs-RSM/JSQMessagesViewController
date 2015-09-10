@@ -24,6 +24,8 @@
 #import "UIImage+JSQMessages.h"
 #import <AVFoundation/AVFoundation.h>
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 @interface JSQVideoMediaItem ()
 
 @property (strong, nonatomic) UIImageView *cachedVideoImageView;
@@ -108,7 +110,12 @@
             UIImage *one = [[UIImage alloc] initWithCGImage:oneRef];
             imageView.image = one;
         }
-            
+        
+        imageView.layer.borderWidth = 12;
+        if(self.appliesMediaViewMaskAsOutgoing)
+            imageView.layer.borderColor = UIColorFromRGB(0x0a49bb).CGColor;
+        else
+            imageView.layer.borderColor = UIColorFromRGB(0xe5e5ea).CGColor;
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.clipsToBounds = YES;
         

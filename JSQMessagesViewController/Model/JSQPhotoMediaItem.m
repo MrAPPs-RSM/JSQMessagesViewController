@@ -21,6 +21,8 @@
 #import "JSQMessagesMediaPlaceholderView.h"
 #import "JSQMessagesMediaViewBubbleImageMasker.h"
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 
 @interface JSQPhotoMediaItem ()
 
@@ -82,6 +84,11 @@
         UIImage *image = [self fixOrientation:self.image];
         UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
         imageView.frame = CGRectMake(0.0f, 0.0f, size.width, size.height);
+        imageView.layer.borderWidth = 12;
+        if(self.appliesMediaViewMaskAsOutgoing)
+            imageView.layer.borderColor = UIColorFromRGB(0x0a49bb).CGColor;
+        else
+            imageView.layer.borderColor = UIColorFromRGB(0xe5e5ea).CGColor;
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.clipsToBounds = YES;
         [JSQMessagesMediaViewBubbleImageMasker applyBubbleImageMaskToMediaView:imageView isOutgoing:self.appliesMediaViewMaskAsOutgoing];
