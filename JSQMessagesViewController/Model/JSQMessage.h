@@ -45,6 +45,11 @@
 @property (copy, nonatomic, readonly) NSDate *date;
 
 /**
+ * Return Message ID
+ */
+@property (strong, nonatomic) NSString *idMessage;
+
+/**
  *  Returns a boolean value specifying whether or not the message contains media.
  *  If `NO`, the message contains text. If `YES`, the message contains media.
  *  The value of this property depends on how the object was initialized.
