@@ -87,6 +87,7 @@
  */
 @interface JSQMessagesCollectionViewCell : UICollectionViewCell
 
+@property (assign, nonatomic) NSIndexPath *currentIndexPath;
 /**
  *  The object that acts as the delegate for the cell.
  */
