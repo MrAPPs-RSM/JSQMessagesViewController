@@ -134,6 +134,7 @@
 - (instancetype)initWithSenderId:(NSString *)senderId
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
-                           media:(id<JSQMessageMediaData>)media;
+                           media:(id<JSQMessageMediaData>)media
+                           text:(NSString*)text;
 
 @end
