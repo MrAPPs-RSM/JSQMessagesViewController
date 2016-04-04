@@ -72,12 +72,14 @@
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
                            media:(id<JSQMessageMediaData>)media
+                           text:(NSString*)text
 {
     NSParameterAssert(media != nil);
     
     self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMedia:YES];
     if (self) {
         _media = media;
+        _text = text;
     }
     return self;
 }
