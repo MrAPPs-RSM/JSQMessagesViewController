@@ -65,7 +65,8 @@
     return [[JSQMessage alloc] initWithSenderId:senderId
                               senderDisplayName:displayName
                                            date:[NSDate date]
-                                          media:media];
+                                          media:media
+                                          text:@""];
 }
 
 - (instancetype)initWithSenderId:(NSString *)senderId
@@ -203,7 +204,8 @@
         return [[[self class] allocWithZone:zone] initWithSenderId:self.senderId
                                                  senderDisplayName:self.senderDisplayName
                                                               date:self.date
-                                                             media:self.media];
+                                                             media:self.media
+                                                             text:self.text];
     }
     
     return [[[self class] allocWithZone:zone] initWithSenderId:self.senderId
