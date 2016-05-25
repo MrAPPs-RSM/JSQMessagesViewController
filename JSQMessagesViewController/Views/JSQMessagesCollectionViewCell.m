@@ -317,7 +317,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     mediaView.frame = self.messageBubbleContainerView.bounds;
 
     [self.messageBubbleContainerView addSubview:mediaView];
-    [self.messageBubbleContainerView jsq_pinAllEdgesOfSubview:mediaView];
+    [self.messageBubbleContainerView jsq_pinAllEdgesOfMediaView:mediaView isOutgoing:[self isKindOfClass:[JSQMessagesCollectionViewCellOutgoing class]]];
     
     //self.cellBottomLabel.frame = (CGRect){self.cellBottomLabel.frame.origin.x, self.cellBottomLabel.frame.origin.y-40, self.cellBottomLabel.frame.size};
     
