@@ -55,7 +55,7 @@
     [self jsq_pinSubview:subview toEdge:NSLayoutAttributeBottom withValue:0];
     [self jsq_pinSubview:subview toEdge:NSLayoutAttributeTop withValue:0];
     [self jsq_pinSubview:subview toEdge:NSLayoutAttributeLeading withValue:isOutgoing?-5:10];
-    [self jsq_pinSubview:subview toEdge:NSLayoutAttributeTrailing withValue:isOutgoing?-5:10];
+    [self jsq_pinSubview:subview toEdge:NSLayoutAttributeTrailing withValue:isOutgoing?-5:0];
 }
 
 @end
