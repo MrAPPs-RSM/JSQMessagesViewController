@@ -190,8 +190,12 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     
     self.textViewFrameInsets = customAttributes.textViewFrameInsets;
 
-    [self jsq_updateConstraint:self.messageBubbleContainerWidthConstraint
+    if([self isKindOfClass:[JSQMessagesCollectionViewCellOutgoing class]])
+        [self jsq_updateConstraint:self.messageBubbleContainerWidthConstraint
                   withConstant:customAttributes.messageBubbleContainerViewWidth];
+    else
+        [self jsq_updateConstraint:self.messageBubbleContainerWidthConstraint
+                  withConstant:customAttributes.messageBubbleContainerViewWidth-10];
 
     [self jsq_updateConstraint:self.cellTopLabelHeightConstraint
                   withConstant:customAttributes.cellTopLabelHeight];
